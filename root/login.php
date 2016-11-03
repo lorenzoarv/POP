@@ -10,14 +10,16 @@ Gebruikersnaam: <input type="text" name="gebruikersnaam"><br>
 Wachtwoord: <input type="password" name="wachtwoord"><br><br>
 <input type="submit" value="inloggen">
 </form>
-//test//
 </html>
 <?php
-if(isset($_POST["gebruikersnaam"]) && isset($_POST["wachtwoord"])){
+if(isset($_POST["gebruikersnaam"]) && isset($_POST["wachtwoord"]) && $_POST["gebruikersnaam"]!=null && $_POST["wachtwoord"]!=null){
 	
 	$naam = $_POST["gebruikersnaam"];
 	$wachtwoord = $_POST["wachtwoord"];
-	print("Jouw gebruikersnaam is: $naam <br />");
-	print("Jouw wachtwoord is: $wachtwoord <br /><br />");
+	echo "Jouw gebruikersnaam is: $naam <br />";
+	echo "Jouw wachtwoord is: $wachtwoord <br /><br />";
+}
+if(isset($_POST["gebruikersnaam"]) && isset($_POST["wachtwoord"]) && ($_POST["gebruikersnaam"]==null OR $_POST["wachtwoord"]==null)){
+echo "Vul een gebruikersnaam én wachtwoord in!";
 }
 ?>
